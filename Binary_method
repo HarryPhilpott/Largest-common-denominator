@@ -1,0 +1,57 @@
+click("1463491558733.png")
+wait("1463501240048.png", 10)
+
+text_box = Region(558,528,230,67).find("1463496712577.png").click()
+
+
+screen_text = str(Region(415,507,549,33).text())
+
+screen_text = list(screen_text)
+i = 36
+while screen_text[i] != 'a':
+    i += 1
+
+a =  ''.join(screen_text[36:i-1])
+b =  ''.join(screen_text[i+3:])
+d = 0.0
+
+print a, b
+a = float(a)
+b = float(b)
+
+while a%2 == 0 and b%2 == 0:
+
+    a = a/2
+    b = b/2
+    d = d + 1.0
+
+
+while a != b:
+
+    if a%2 == 0:
+        a = a/2
+        
+    elif b%2 == 0:
+        b = b/2
+
+    elif a > b:
+        a = (a - b)/2
+
+    else:
+        b = (b - a)/2
+
+div = int(a*2.0**d)
+
+
+
+
+text_box.click()
+type(str(div) + Key.ENTER)
+
+
+
+
+
+
+
+        
